@@ -1,7 +1,6 @@
 body {
     margin: 0;
     padding: 0;
-    /* background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb(160, 199, 254) 74.6%); */
     background-image: url('./images/background.png');
     font-family: 'Oswald', sans-serif;
     color: white;
@@ -15,7 +14,6 @@ body {
 /* Header */
 
 .header {
-    /* background: radial-gradient(circle at 10% 20%, rgb(253, 239, 132) 0%, rgb(247, 198, 169) 54.2%, rgb(21, 186, 196) 100.3%); */
     background-image: url('./images/headerbg2.png');
     height: 12.5vh;
     display: flex;
@@ -158,6 +156,4 @@ input {
 .hidden {
     visibility: hidden;
     opacity: 0;
-    
-    /* transform: translate(-50%, -50%) scale(0); */
 }
