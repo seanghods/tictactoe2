@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <style>
@@ -12,6 +12,7 @@
 </head>
 <body>
     <div class="container">
+        <div class="gameover hidden"></div>
         <div class="header"><h1><em>Tic &nbsp; Tac &nbsp; Toe </em></h1></div>
         <div class="message">Two new challengers have appeared...</div>
         <div class="content">
@@ -38,6 +39,5 @@
             <button type="submit" onclick="event.preventDefault();launch();">Start</button>
         </form>
     </div>
-    <div class="gameover hidden"></div>
 </body>
 </html>

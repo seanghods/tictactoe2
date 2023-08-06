@@ -20,7 +20,7 @@ const launch = () => {
         gameController.changePlayerName(1, player1Name.value);
         gameStart.setMessage(`~ Make your move, ${player1Name.value} ~`);
     } else {
-        gameStart.setMessage(`~ Make your move, X ~`);
+        gameStart.setMessage(`~ Make your move, Player X ~`);
     }
     if (player2Name.value.length > 0) {
         gameController.changePlayerName(2, player2Name.value);
