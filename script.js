@@ -1,16 +1,27 @@
 const startChecker = (() => {
     let hasStarted = false;
+    let computerOpponent = false;
 
     const hasGameStarted = () => hasStarted;
 
     const start = () => hasStarted = true;
 
-    return {hasGameStarted, start}
+    const isVsComputer = () => computerOpponent;
+
+    const playVsComputer = () => computerOpponent = true;
+
+    const toggleDisabled = (val) => {
+        const p2Field = document.querySelector("#player2-name")
+        p2Field.disabled = val == 'yes' ? true : false;
+    }
+
+    return {hasGameStarted, start, isVsComputer, playVsComputer, toggleDisabled}
 })();
 
 const launch = () => {
     const player1Name = document.querySelector('#player1-name');
     const player2Name = document.querySelector('#player2-name');
+    const playComputer = document.querySelector('#computer')
     const form = document.querySelector('.modal');
 
     form.classList.add('hidden');
@@ -25,6 +36,9 @@ const launch = () => {
     if (player2Name.value.length > 0) {
         gameController.changePlayerName(2, player2Name.value);
     }
+    
+    if (playComputer.value == 'yes') startChecker.playVsComputer();
+
 }
 
 
@@ -113,6 +127,17 @@ const gameController = (() => {
             return;
         }
         gameStart.setMessage(`~ Make your move, ${getPlayerName()} ~`);
+        ifCompPlayRound();
+    }
+
+    const ifCompPlayRound = () => {
+        if (startChecker.isVsComputer() && round % 2 == 0) {
+            let move;
+            do {
+                move = Math.floor(Math.random() * 9)
+            } while (gameBoard.getField(move))
+            playRound(move);
+        }
     }
 
     const changePlayerName = (player, name) => {
