@@ -142,9 +142,17 @@ input {
     font-weight: bold;
 }
 
+input {
+    cursor: pointer;
+}
+
 #computer {
     background-color: lightblue;
     font-weight: bold;
+}
+
+#computer:hover {
+    cursor: pointer;
 }
 
 .gameover {
